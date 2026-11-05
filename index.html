@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Computer Information</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="scripts.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="layout-container-container">
+            <div class="layout-container">
+                <!-- Left Fieldset -->
+                <fieldset id="computer">
+                    <legend>Computer Information</legend>
+                    <fieldset>
+                        <legend>Computer Type</legend>
+                        <input type="radio" id="desktop" name="compType" value="desktop"/>
+                        <label for="desktop">Desktop</label><br />
+
+                        <input type="radio" id="laptop" name="compType" value="laptop"/>
+                        <label for="laptop">Laptop</label><br />
+                    </fieldset>
+
+                    MAC Address: <input type="text" id="macAddress"><br>
+                    Serial Number: <input type="text" id="serialNumber"><br>
+                    Make: <input type="text" id="make"><br>
+                    Model: <input type="text" id="model"><br>
+                    Memory (GB): <input type="text" id="memory"><br>
+                    Storage (GB): <input type="text" id="storage"><br>
+                    IO Ports: <input type="text" id="ports"><br>
+                    <input type="checkbox" id="shipped"/>
+                    <label for="shipped">Shipped</label><br />
+
+                    <input type="checkbox" id="received"/>
+                    <label for="received">Received</label><br /><br />
+                    <input type="button" value="Submit" id="subButton" onclick="submitForm()">
+
+                </fieldset>
+
+                <!-- Right Column (Desktop + Donor Info stacked vertically) -->
+                <div class="right-column">
+                    <fieldset>
+                        <legend>Desktop</legend>
+                        Case Size: <input type="text" id="caseSize"><br>
+                        CPU: <input type="text" id="cpu"><br>
+                        GPU: <input type="text" id="gpu"><br>
+                        PSU: <input type="text" id="psu"><br>
+                        Cooling System: <input type="text" id="coolingSystem"><br>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Donor Information</legend>
+                        First Name: <input type="text" id="donorFName"><br>
+                        Last Name: <input type="text" id="donorLName"><br>
+                        Email: <input type="text" id="donorEmail"><br>
+                        Date Received: <input type="text" id="dateRecieved"><br>
+                    </fieldset>
+                </div>
+            </div>
+                <div class="bottom-row" style="display: none;" id="sub-status">
+                    <fieldset>
+                        <legend>Submission Status</legend>
+                        <p id="sub-status-text">Submission received successfully!</p>
+                    </fieldset>
+            </div>
+        </div>
+    </body>
+</html>

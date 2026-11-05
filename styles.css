@@ -1,0 +1,251 @@
+:root {
+    --primary-color: #ffffff;
+    --card-bg: #f8fafc;
+    --secondary-color: #334155;
+    --accent-color: #4f46e5;
+    --error-color: #be1515;
+    --success-color: #11cc50;
+}
+
+/* Default styles: mobile-first layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 1rem;
+    font-family: "Montserrat", sans-serif;
+    color: var(--secondary-color);
+    background: linear-gradient(lavender, white);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.layout-container-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.bottom-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+fieldset {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 14px;
+    background-color: var(--card-bg);
+    box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.12);
+}
+
+legend {
+    padding: 2px 8px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--card-bg);
+    font-weight: 600;
+}
+
+input[type="text"] {
+    display: block;
+    width: 100%;
+    min-height: 2rem;
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.4rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    font: inherit;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--accent-color);
+}
+
+input:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+}
+
+.montserrat-font {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    -webkit-text-stroke: 2px black;
+}
+
+#subButton {
+    display: block;
+    margin: 0.5rem auto 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+#subButton:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+#sub-status fieldset {
+    max-width: none;
+}
+
+/* Small tablets and larger phones */
+@media screen and (min-width: 600px) {
+    body {
+        padding: 1.5rem;
+    }
+
+    .layout-container-container {
+        gap: 1.25rem;
+    }
+
+    .layout-container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    #computer {
+        flex: 1;
+    }
+
+    .right-column {
+        flex: 1;
+    }
+
+    fieldset {
+        padding: 1.25rem;
+    }
+}
+
+/* Desktop and wide screens */
+@media screen and (min-width: 900px) {
+    body {
+        padding: 2rem;
+    }
+
+    .layout-container-container {
+        gap: 1.5rem;
+    }
+
+    .layout-container,
+    .bottom-row {
+        gap: 1.5rem;
+    }
+
+    fieldset {
+        border-radius: 20px;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Print: simple black-and-white document without interactive controls */
+@media print {
+    :root {
+        --primary-color: #ffffff;
+        --card-bg: #ffffff;
+        --secondary-color: #000000;
+        --accent-color: #000000;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        color: #000000;
+        background: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+    }
+
+    .layout-container-container,
+    .layout-container,
+    .right-column,
+    .bottom-row {
+        display: block;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    fieldset {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid #000000;
+        border-radius: 0;
+        background: #ffffff;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    legend {
+        border: 1px solid #000000;
+        background: #ffffff;
+    }
+
+    input[type="text"] {
+        display: inline-block;
+        width: auto;
+        min-height: 0;
+        margin: 0 0 0.25rem;
+        padding: 0.1rem;
+        border: 0;
+        border-bottom: 1px solid #000000;
+        border-radius: 0;
+        background: #ffffff;
+        color: #000000;
+    }
+
+    #subButton,
+    input[type="button"],
+    button,
+    a {
+        display: none !important;
+    }
+
+    * {
+        color: #000000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
